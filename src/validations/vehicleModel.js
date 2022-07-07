@@ -9,7 +9,7 @@ const VehicleSchema = yup.object().shape({
   plate: yup.string().max(7).trim(),
   price: yup.number().min(3),
   favorite: yup.boolean(),
-  createAt: yup.date().,
+  createAt: yup.date(),
 })
 
 module.exports = VehicleSchema
