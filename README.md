@@ -1,6 +1,6 @@
 # API - Vehicles Ads
 
-Esta é uma RESTful API que permite fazer um CRUD de veículos (criação, atualização, deletar).
+Esta é uma RESTful API que permite fazer um CRUD de veículos.
 
 ## **Endpoints**
 
