@@ -31,7 +31,7 @@ const updateVehicle = async (req, res) => {
   const { name, brand, color, year, plate, price, favorite, createdAt, description } = req.body
 
   try {
-    await vehicleSchema.validate(req.body)
+    await updateShcema.validate(req.body)
 
     const updateVehicle = await knex('vehicle').where('id', id).update({
       name,
@@ -58,8 +58,6 @@ const updateVehicle = async (req, res) => {
 const deleteVehicle = async (req, res) => {
   const { id } = req.params
   try {
-    await vehicleSchema.validate(req.body)
-
     const deleteVehicle = await knex('vehicle').where('id', id).del()
 
     if (!deleteVehicle) {
