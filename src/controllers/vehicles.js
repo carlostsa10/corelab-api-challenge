@@ -84,9 +84,25 @@ const getAllVehicles = async (req, res) => {
   }
 }
 
+const getOneVehicle = async (req, res) => {
+  const { id } = req.params
+  try {
+    const vehicle = await knex('vehicle').where('id', id)
+
+    if (!vehicle) {
+      return res.status(400).json(errors.invalidVehicle)
+    }
+
+    return res.status(200).json(vehicle)
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   newVehicle,
   updateVehicle,
   deleteVehicle,
   getAllVehicles,
+  getOneVehicle,
 }

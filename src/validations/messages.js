@@ -9,5 +9,6 @@ const errors = {
   unUpdateVehicle: 'Não foi possivel atualizar o veículo.',
   unDeleteVehicle: 'Não foi possivel deletar o veículo.',
   anyVehicle: 'Não existe nenhum veículo cadastrado.',
+  invalidVehicle: 'Veículo inválido.',
 }
 module.exports = { messages, errors }
