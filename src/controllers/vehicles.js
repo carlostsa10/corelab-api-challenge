@@ -1,5 +1,6 @@
 const vehicleSchema = require('../validations/vehicleModel')
 const { messages, errors } = require('../validations/messages')
+const knex = require('../utils/conection')
 
 const newVehicle = async (req, res) => {
   const { name, brand, color, year, plate } = req.body
