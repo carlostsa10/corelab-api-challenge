@@ -9,7 +9,7 @@ const {
 
 const routes = express()
 
-routes.post('/newVehicle', newVehicle)
+routes.post('/newvh', newVehicle)
 routes.patch('/updateVehicle/:id', updateVehicle)
 routes.delete('/deleteVehicle/:id', deleteVehicle)
 routes.get('/vhs', getAllVehicles)
