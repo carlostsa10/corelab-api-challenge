@@ -2,7 +2,7 @@ const vehicleSchema = require('../validations/vehicleModel')
 const { messages, errors } = require('../validations/messages')
 
 const newVehicle = async (req, res) => {
-  const { name, brand, color, year, plate, price, favorite, createdAt } = req.body
+  const { name, brand, color, year, plate } = req.body
 
   try {
     await vehicleSchema.validate(req.body)
@@ -13,9 +13,6 @@ const newVehicle = async (req, res) => {
       color,
       year,
       plate,
-      price,
-      favorite,
-      createdAt,
     })
 
     if (!newVehicle) {
@@ -30,7 +27,7 @@ const newVehicle = async (req, res) => {
 
 const updateVehicle = async (req, res) => {
   const { id } = req.params
-  const { name, brand, color, year, plate, price, favorite, createdAt } = req.body
+  const { name, brand, color, year, plate, price, favorite, createdAt, description } = req.body
 
   try {
     await vehicleSchema.validate(req.body)
@@ -44,6 +41,7 @@ const updateVehicle = async (req, res) => {
       price,
       favorite,
       createdAt,
+      description,
     })
 
     if (!updateVehicle) {
