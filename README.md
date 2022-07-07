@@ -77,7 +77,7 @@ Essa é a rota que será utilizada para atualizar um veículo no sistema.
       "color": "Vermelho",
       "year": 2016,
       "plate": "PZ1020",
-      "price: 20155,
+      "price": 201545,
       "description": Único dono, usado por 6 anos.
 }
 ```
