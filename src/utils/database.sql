@@ -5,11 +5,11 @@ CREATE TABLE IF NOT EXISTS vehicle(
     name text NOT NULL,
     brand text NOT NULL,
     color text NOT NULL,
-    year date NOT NULL,
+    year int NOT NULL,
     plate VARCHAR(7) NOT NULL,
-    price number NOT NULL,
+    price int,
     favorite boolean default false,
-    createdAt date NOT NULL
+    createdAt timestamptz
 
 )
 
