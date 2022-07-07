@@ -1,23 +1,17 @@
-/*
-|--------------------------------------------------------------------------
-| Routes
-|--------------------------------------------------------------------------
-|
-| This file is dedicated for defining HTTP routes. A single file is enough
-| for majority of projects, however you can define routes in different
-| files and just make sure to import them inside this file. For example
-|
-| Define routes in following two files
-| ├── start/routes/cart.ts
-| ├── start/routes/customer.ts
-|
-| and then import them inside `start/routes.ts` as follows
-|
-| import './routes/cart'
-| import './routes/customer'
-|
-*/
+const express = require('express')
 
-import Route from '@ioc:Adonis/Core/Route'
+const {
+  newVehicle,
+  updateVehicle,
+  deleteVehicle,
+  getAllVehicles,
+} = require('./controllers/vehicles')
 
-Route.get('/vehicles', 'VehiclesController.index');
+const routes = express()
+
+routes.post('/newVehicle', newVehicle)
+routes.patch('/updateVehicle/:id', updateVehicle)
+routes.delete('/deleteVehicle/:id', deleteVehicle)
+routes.get('/vhs', getAllVehicles)
+
+module.exports = routes
