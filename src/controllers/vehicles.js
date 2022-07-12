@@ -6,7 +6,7 @@ const newVehicle = async (req, res) => {
   const { name, brand, color, year, plate } = req.body
 
   try {
-    await vehicleSchema.validate(req.body)
+    //await vehicleSchema.validate(req.body)
 
     const newVehicle = await knex('vehicle').insert({
       name,
