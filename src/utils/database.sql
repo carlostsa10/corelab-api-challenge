@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS vehicle(
 
 CREATE TABLE IF NOT EXISTS favorites(
     id serial PRIMARY KEY,
-    id_vehicle seria references vehicle(id),
+    id_vehicle serial references vehicle(id),
     isFavorite boolean default false
 
 )
