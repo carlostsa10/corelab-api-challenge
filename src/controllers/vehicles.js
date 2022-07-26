@@ -99,10 +99,29 @@ const getOneVehicle = async (req, res) => {
   }
 }
 
+const favoriteVhs = async (req, res) => {
+  const { id } = req.params
+  try {
+    const newFavorite = await knex('favorites').insert({
+      id_vehicle: id,
+      isFavorite: true,
+    })
+
+    if (!newFavorite) {
+      return res.status(400).json(errors.unregisteredFavorite)
+    }
+
+    return res.status(200).json(messages.favoriteSucess)
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   newVehicle,
   updateVehicle,
   deleteVehicle,
   getAllVehicles,
   getOneVehicle,
+  favoriteVhs,
 }
