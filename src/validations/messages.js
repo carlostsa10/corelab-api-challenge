@@ -12,5 +12,7 @@ const errors = {
   anyVehicle: 'Não existe nenhum veículo cadastrado.',
   invalidVehicle: 'Veículo inválido.',
   unregisteredFavorite: 'Não foi possível favoritar este veículo no momento.',
+  anyFavorite: 'Não existe nenhum veículo favorito.',
+  invalidFavorite: 'Favorito inválido.',
 }
 module.exports = { messages, errors }

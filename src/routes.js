@@ -7,6 +7,7 @@ const {
   getAllVehicles,
   getOneVehicle,
   favoriteVhs,
+  getAllFavorites,
 } = require('./controllers/vehicles')
 
 const routes = express()
@@ -17,5 +18,6 @@ routes.delete('/deleteVehicle/:id', deleteVehicle)
 routes.get('/vhs', getAllVehicles)
 routes.get('/vhs/:id', getOneVehicle)
 routes.post('/favorite/:id', favoriteVhs)
+routes.get('/favorites', getAllFavorites)
 
 module.exports = routes

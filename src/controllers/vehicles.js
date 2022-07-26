@@ -104,7 +104,7 @@ const favoriteVhs = async (req, res) => {
   try {
     const newFavorite = await knex('favorites').insert({
       id_vehicle: id,
-      isFavorite: true,
+      isfavorite: true,
     })
 
     if (!newFavorite) {
@@ -117,6 +117,35 @@ const favoriteVhs = async (req, res) => {
   }
 }
 
+const getAllFavorites = async (req, res) => {
+  try {
+    const favorites = await knex('favorites').select('*')
+
+    if (!favorites) {
+      return res.status(400).json(errors.anyFavorite)
+    }
+
+    return res.status(200).json(favorites)
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
+}
+
+const getOneFavorite = async (req, res) => {
+  const { id } = req.params
+  try {
+    const favorite = await knex('favorites').where('id', id)
+
+    if (!favorite) {
+      return res.status(400).json(errors.invalidFavorite)
+    }
+
+    return res.status(200).json(favorite)
+  } catch (error) {
+    res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   newVehicle,
   updateVehicle,
@@ -124,4 +153,6 @@ module.exports = {
   getAllVehicles,
   getOneVehicle,
   favoriteVhs,
+  getAllFavorites,
+  getOneFavorite,
 }
